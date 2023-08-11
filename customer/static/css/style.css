@@ -1,0 +1,83 @@
+body  {
+    background-image: url("/static/images/bgsea.jpg");
+       }
+
+li a button{
+    border: 1px soild red;
+}
+
+
+
+
+
+img{
+    max-width: 100%;
+}
+.head{
+    margin-top: 30px;
+    background-color: rgb(60, 101, 87);
+}
+
+   
+.head h3{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    text-align: center;
+}
+.body p{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.conc{
+    background-color: bisque;
+}
+.headmeet{
+    height: 50px;
+    background-color: rgb(207, 231, 223);
+}
+.headmeet h4{
+    
+    color: rgb(59, 144, 164);
+    font-family: 'Times New Roman', Times, serif;
+}
+.friends{
+    height: 1050px;
+    width:1150px;
+    background-color: rgb(186, 209, 201);
+}
+.mem{
+    width: 250px;
+    height: 1050px;
+    background-color: rgb(213, 225, 231);
+    float: right;
+}
+.anything{
+    width:300px;
+    height: fit-content;
+    background-color: beige;
+}
+.anything h4{
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(0, 98, 147);
+
+
+}
+.review{
+    background-color: aliceblue;
+}
+.review-details{
+    background-color: azure;
+}
+.review h4{
+    text-align: center;
+    color: rgb(78, 78, 116);
+    font-family: 'Times New Roman', Times, serif;
+}
+.res-container{
+    width: 1900px;
+}
+.res-container h2{
+    text-align: center;
+}
+
+    

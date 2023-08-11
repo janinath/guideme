@@ -1,0 +1,19 @@
+.otp{
+    background-color: rgb(120, 187, 165);
+    height: 550px;
+    margin-top: 0px;
+}
+.otp .otpdiv{
+    
+    text-align: center;
+    
+}
+
+.otpbutn{
+    color: blanchedalmond;
+    border: 0;
+    background-color: rgb(59, 59, 221);
+    height: 40px;
+    width: 60px;
+    border-radius: 50px;
+}

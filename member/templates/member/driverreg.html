@@ -1,0 +1,335 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration</title>
+    <link rel="stylesheet" href="{% static 'css/phreg.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">    
+    <style>
+        body{
+    min-height: 100vh;        
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #148c64;
+}
+.loginbutn{
+        width: 100px;
+        border: 0px solid;
+        position: relative;
+        padding: 15px 0;
+        text-align: center;
+        margin: 20px 10px;
+        font-weight: 50px;
+        font-size: 20px;
+        background:transparent;
+        color: #0d824d;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border-radius: 100px;
+        transition: 1.5s;
+        
+
+    }
+    .loginbutn:hover {
+        box-shadow: 0 5px 8px 0 #0d824d inset,0 5px 8px 0 #0d824d,
+                    0 5px 8px 0 #0d824d inset,0 5px 8px 0 #0d824d;
+        
+    }
+.container{
+    margin: 30px 250px;
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 6px;
+    padding:30px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,1);
+
+}
+.container header{
+    position: relative;
+    font-size: 20px;
+    font-weight: 600px;
+    color: #333;
+}
+.container header::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 27px;
+    border-radius: 8px;
+    background-color: #4070f4;
+}
+.container form{
+    position: relative;
+    margin-top: 16px;
+    min-height: 1300px;
+    background-color: #fff;
+}
+.container form .form{
+    position: absolute;
+    background-color: #fff;
+}
+
+
+.container form .title{
+    display: block;
+    margin-bottom: 8px;
+    font-size:16px ;
+    font-weight: 500;
+    margin: 6px 0;
+    color:#333;
+}
+.container form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+form .fields .input-field{
+    display: flex;
+    width:calc(100% /3 - 15px) ;
+    flex-direction: column;
+    margin: 4px 0;
+}
+.inpu-field label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e2e;
+}
+.input-field input{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+.input-field input:is(:focus, :valid){
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.input-field input[type="date"]{
+    color:#707070;
+}
+.input-field input[type="date"]:valid{
+    color:#333;
+}
+.container form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin: 24px 0;
+    background-color: #1c8f52;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    font-weight: bold;
+}
+.form button:hover{
+    background-color: #095b3a;
+    
+}
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 py-lg-5">
+          <a class="navbar-brand" href="#">
+            <img src="{% static 'images/logo.png' %}" width="50" height="50" class="d-inline-block align-top" alt="">
+            
+          </a>
+          <a class="navbar-brand headding" href="#">
+            <b style="font-size: 50px;">guideME</b>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <li><a class="nav-link active" href="{% url 'member:memlogin' %}"><button class="loginbutn">login</button></a></li>
+
+    
+                <li><a class="nav-link active" href="{% url 'member:nmehome' %}"><button class="loginbutn">home</button></a></li>
+              </div>
+          </div>
+        </nav> 
+        <div class="container">
+            <header>Registration</header>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="form first">
+                    <div class="details personal">
+                        <span class="title">Personal Details</span>
+                        <div class="fields">
+                            <div class="input-field">
+                                <label for="">Full Name</label>
+                                <input type="text" name="fullname" id="" placeholder="Enter your name" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">Date of birth</label>
+                                <input type="date" name="dob" id="" placeholder="Enter your DOB" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">Email</label>
+                                <input type="email" name="email" id="" placeholder="Enter your emali" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">Mobile Number</label>
+                                <input type="number" name="mob" id="" placeholder="Enter your Mobile Number" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">Gender</label>
+                                <input type="text" name="gender" id="" placeholder="Enter your Gender" >
+                            </div>
+                            <div class="input-field">
+                                <label for="">profile photo</label>
+                                <input type="file" name="propic" id="" placeholder="Your Profile Photo" required>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div class="details ID">
+                        <span class="title">Identity Details</span>
+                        <div class="fields">
+                            <div class="input-field">
+                                <label for="">ID Type</label>
+                                <input type="text" name="idtype" id="" placeholder="Enter your ID type" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">ID number</label>
+                                <input type="text" name="idnum" id="" placeholder="Enter your ID number" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">Image of ID</label>
+                                <input type="file" name="idimg" id="" placeholder="Upload ID image" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">Second ID Type</label>
+                                <input type="text" name="sidtype" id="" placeholder="Enter your ID type" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">ID number</label>
+                                <input type="text" name="sidnum" id="" placeholder="Enter your ID number" >
+                            </div>
+                            <div class="input-field">
+                                <label for="">Img of Seconf ID</label>
+                                <input type="file" name="sidimg" id="" placeholder="Upload ID image" required>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                    <div class="details address">
+                        <span class="title">Address Details</span>
+                        <div class="fields">
+                            <div class="input-field">
+                                <label for="">Nationality</label>
+                                <input type="text" name="natn" id="" placeholder="Enter your Nationality" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">State</label>
+                                <input type="text" name="state" id="" placeholder="Enter your State" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">District</label>
+                                <input type="text" name="dist" id="" placeholder="Enter your District" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">Street Name</label>
+                                <input type="text" name="street" id="" placeholder="Enter your Street Name" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">Post</label>
+                                <input type="text" name="post" id="" placeholder="Enter your Post" >
+                            </div>
+                            <div class="input-field">
+                                <label for="">Pin code</label>
+                                <input type="number" name="pin" id="" placeholder="Enter your Pincode" required>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div class="details Work">
+                        <span class="title">Work Details</span>
+                        <div class="fields">
+                            <div class="input-field">
+                                <label for="">Places You Are Available</label>
+                                <input type="text" name="place" id="" placeholder="Enter places you prefered to work" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">Available time</label>
+                                <input type="text" name="time" id="" placeholder="Your time for work" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">Vehicle Model</label>
+                                <input type="text" name="model" id="" placeholder="photos to impress your clients" >
+                            </div>
+                            <div class="input-field">
+                                <label for="">Driving licence</label>
+                                <input type="file" name="license" id="" placeholder="Upload Your licence" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">RC</label>
+                                <input type="file" name="rc" id="" placeholder="Upload your RC" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">Whatsapp number for your clients</label>
+                                <input type="number" name="wapp" id="" placeholder="Type the number through which clients can contact" required>
+                            </div>
+                            
+                            </div>
+                            
+                            
+                            
+                    </div>
+                    <div class="details login">
+                        <span class="title">Login Details</span>
+                        <div class="fields">
+                            <div class="input-field">
+                                <label for="">Create a Username</label>
+                                <input type="text" name="user" id="" placeholder="Create a Username " required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">Confirm username</label>
+                                <input type="text" name="cuser" id="" placeholder="Confirm the Username" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="">Create a Password</label>
+                                <input type="text" name="pswd" id="" placeholder="Create a Password" >
+                            </div>
+                            <div class="input-field">
+                                <label for="">Confirm the Password</label>
+                                <input type="text" name="cpswd" id="" placeholder="Confirm the Password" required>
+                            </div>
+                            
+                            </div>
+                    <button type="submit" class="submit-butn" >Submit</button>
+                </div>
+                
+                
+                
+                      
+                    
+            </form>    
+        </div>
+    </div>  
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> 
+</body>
+</html>

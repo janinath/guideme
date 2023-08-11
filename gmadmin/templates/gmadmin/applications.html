@@ -1,0 +1,221 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guideME</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link  rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">    
+<style>
+  
+  .homebutn{
+    border: none;
+    width: 150px;
+    font-size: 25px;
+    padding: 1px;
+    color: rgb(13, 56, 56);
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 100px;
+    
+        
+
+    }
+    .homebutn:hover {
+        border:1px solid rgb(21, 94, 46);
+        
+    }
+    container {
+    background-color: rgb(52, 117, 81);
+    display: inline-block;
+    font-size: 160px;
+    margin: 10px;
+    margin-top: 100px;
+    margin-left: 120px;
+    max-width: 315px;
+    min-width: 230px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.container * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-transition:all 0.35s ease;
+  transition: all 0.35s ease;
+
+}
+.container h3 {
+  background-color: rgb(201, 228, 218);
+  border: 1px solid rgb(23, 82, 55);
+  letter-spacing:1px ;
+  margin:0 ;
+  padding:5px 10px ;
+  color: rgb(3, 53, 12);
+  font-size: 80px;
+
+}
+.container::before,
+.container::after{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-box-transition:all 0.35s ease;
+  transition: all 0.35s ease;
+  background-color:rgb(65, 166, 119) ;
+  border-left:3px solid black ;
+  border-right: 3px solid black;
+  content: '';
+  opacity: 0.9;
+  z-index: 1;
+
+}
+.container::before{
+  -webkit-transform: skew(45deg) translateX(-155%);
+  transform: skew(45deg) translateX(-155%);
+
+}
+.container::after{
+  -webkit-transform: skew(45deg) translateX(155%);
+  transform: skew(45deg) translateX(155%);
+
+}
+.container img {
+  backface-visibility: hidden;
+  max-width: 100%;
+  
+  
+}
+.container figcaption{
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  z-index: 2;
+  -webkit-transform:translate(-50%,-50%) scale(0.5);
+  transform: translate(-50%,-50%) scale(0.5);
+  opacity: 0;
+  -webkit-box-shadow: 0  0 10px rgb(17, 137, 95);
+  box-shadow: 0  0 10px rgb(17, 137, 95) ;
+}
+.container a {
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+
+}
+.container:hover img {
+  opacity:0.5 ;
+}  
+.container:hover::before ,
+.container:hover::before {
+  transform:skew(45deg) translateX(-55%) ;
+  -webkit-transform:skew(45deg) translateX(-55%);
+}
+.container:hover::after,
+.container:hover::after {
+  transform:skew(45deg) translateX(55%) ;
+  -webkit-transform:skew(45deg) translateX(55%);
+}
+.container:hover figcaption,
+.container:hover figcaption {
+  -webkit-transform: translate(-50% -50%) scale(1);
+  transform: translate(-50% -50%) scale(1);
+  opacity: 1;
+}
+.row{
+    margin-top: 30px;
+    
+}
+body{
+    background-color: rgb(49, 87, 71);
+}
+.card{
+    margin-left: 2px;
+}
+.row{
+    justify-content: center;
+    align-items: center;
+}
+
+
+    
+  
+   
+    
+
+</style> 
+ 
+</head>
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 py-lg-5">
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'images/logo.png' %}" width="50" height="50" class="d-inline-block align-top" alt="">
+        
+      </a>
+      <a class="navbar-brand headding" href="#">
+        <b style="font-size: 50px;">guideME</b>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+            <li><a class="nav-link active" href="{% url 'gmadmin:login' %}"><button class="homebutn">back</button></a></li>
+
+
+          </div>
+      </div>
+    </nav>
+    <div class="row">
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'images/restau.png' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Waiting List</h5>
+            <a href="{% url 'member:waitinglist' %}" class="btn btn-success">View</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'images/restau.png' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Accepted</h5>
+            <a href="{% url 'member:accepted' %}" class="btn btn-success">View</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'images/restau.png' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Rejected</h5>
+            <a href="{% url 'member:rejected' %}" class="btn btn-success">View</a>
+          </div>
+        </div>
+      </div>
+        
+          
+    </div>
+     
+    
+
+        
+        
+      
+    </div>
+    
+
+</body>
+</html>      

@@ -1,0 +1,95 @@
+{% extends 'member/mehome.html' %}
+{% load static %}
+{% block memberNavbar %}
+<div class="container-fluid" style="text-align: center;"><H3 style="font-family: 'Times New Roman', Times, serif;">Registration form</H3></div>
+<form action="" method="post">
+    <div class="container-fluid" style="background-color: rgb(129, 186, 186);">
+        <div class="row mt-3">
+            <div class="col-3"></div>
+            <div class="col-3">
+                <label for="firstname">First Name</label>
+                <input type="text" class="form-control" placeholder="First name">
+            </div>
+            <div class="col-3">
+                <label for="secondname">Second Name</label>
+                <input type="text" class="form-control" placeholder="Last name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-3"><div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Address">
+              </div></div>
+            <div class="col-3"><div class="form-group">
+                <label for="inputAddress2">Address2</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Address 2">
+              </div></div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-3">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCity">City</label>
+                      <input type="text" class="form-control" id="inputCity">
+                    </div>
+                </div>    
+            </div>
+            <div class="col-3">
+                <div class="form-group col-md-6">
+                    <label for="inputState">State</label>
+                    <select id="inputState" class="form-control">
+                      <option selected>Choose...</option>
+                      <option>...</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-3">
+                <label>Email</label>
+                <input type="email" class="form-control" id="colFormLabel" placeholder="">
+            </div>
+            <div class="col-3">
+                <label>Mobile number</label>
+                <input type="number" class="form-control" name="" id="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Create a Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                  </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-4">
+                
+                    <div class="form-group">
+                      <label for="exampleFormControlFile1">Upload your resume and experience certificate as a single file</label>
+                      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5"></div>
+            <div class="col-2">
+                <button type="submit" class="btn btn-primary mb-2">Register</button>
+            </div>
+            <div class="col-5"></div>
+        </div>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,223 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guideME</title>
+
+    <link  rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">    
+    <style>
+      .loginbutn{
+          width: 100px;
+          border: 0px solid;
+          position: relative;
+          padding: 15px 0;
+          text-align: center;
+          margin: 20px 10px;
+          font-weight: 50px;
+          font-size: 20px;
+          background:transparent;
+          color: #074c5d;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          border-radius: 100px;
+          transition: 1.5s;
+          
+  
+      }
+      .loginbutn:hover {
+          box-shadow: 0 5px 8px 0 #3c93b3 inset,0 5px 8px 0 #3c93b3 ,
+                      0 5px 8px 0 #3c93b3 inset,0 5px 8px 0 #3c93b3 ;
+          
+      }
+      body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(213, 226, 222);
+}
+.container {
+    background-color: rgb(124, 165, 165);
+    display: inline-block;
+    font-size: 160px;
+    margin: 10px;
+    margin-top: 100px;
+    margin-left: 120px;
+    max-width: 315px;
+    min-width: 230px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.container * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-transition:all 0.35s ease;
+  transition: all 0.35s ease;
+
+}
+.container h3 {
+  background-color: rgb(176, 195, 196);
+  border: 1px solid antiquewhite;
+  letter-spacing:1px ;
+  margin:0 ;
+  padding:5px 10px ;
+  color: rgb(12, 53, 66);
+  font-size: 80px;
+
+}
+.container::before,
+.container::after{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-box-transition:all 0.35s ease;
+  transition: all 0.35s ease;
+  background-color:rgb(176, 195, 196) ;
+  border-left:3px solid black ;
+  border-right: 3px solid black;
+  content: '';
+  opacity: 0.9;
+  z-index: 1;
+
+}
+.container::before{
+  -webkit-transform: skew(45deg) translateX(-155%);
+  transform: skew(45deg) translateX(-155%);
+
+}
+.container::after{
+  -webkit-transform: skew(45deg) translateX(155%);
+  transform: skew(45deg) translateX(155%);
+
+}
+.container img {
+  backface-visibility: hidden;
+  max-width: 100%;
+  
+  
+}
+.container figcaption{
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  z-index: 2;
+  -webkit-transform:translate(-50%,-50%) scale(0.5);
+  transform: translate(-50%,-50%) scale(0.5);
+  opacity: 0;
+  -webkit-box-shadow: 0  0 10px rgb(70, 182, 199);
+  box-shadow: 0  0 10px rgb(67, 161, 180) ;
+}
+.container a {
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+
+}
+.container:hover img {
+  opacity:0.5 ;
+}  
+.container:hover::before ,
+.container:hover::before {
+  transform:skew(45deg) translateX(-55%) ;
+  -webkit-transform:skew(45deg) translateX(-55%);
+}
+.container:hover::after,
+.container:hover::after {
+  transform:skew(45deg) translateX(55%) ;
+  -webkit-transform:skew(45deg) translateX(55%);
+}
+.container:hover figcaption,
+.container:hover figcaption {
+  -webkit-transform: translate(-50% -50%) scale(1);
+  transform: translate(-50% -50%) scale(1);
+  opacity: 1;
+}
+     
+    
+   </style>
+ 
+</head>
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 py-lg-5">
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'images/logo.png' %}" width="50" height="50" class="d-inline-block align-top" alt="">
+        
+      </a>
+      <a class="navbar-brand headding" href="#">
+        <b style="font-size: 50px;">guideME</b>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          
+
+            <li><a class="nav-link active" href="{% url 'customer:login' %}"><button class="loginbutn">home</button></a></li>
+            <li><a class="nav-link active" href="{% url 'customer:register1' %}"><button class="loginbutn">logout</button></a></li>
+            
+            
+            
+            
+              
+        </div>
+      </div>
+    </nav>
+    <div class="row">
+      <figure class="container col-lg-4 col-4">
+        <img src="{% static 'images/friend.png' %}" alt="" srcset="">
+        <figcaption><h3>make friends here</h3></figcaption>
+        <a href="{% url 'customer:nsign' %}"></a>
+      </figure>
+      <figure class="container col-lg-4 col-4">
+        <img src="{% static 'images/restau.png' %}" alt="" srcset="">
+        <figcaption><h3>restaurent</h3></figcaption>
+        <a href=""></a>
+      </figure>
+      <figure class="container col-lg-4 col-4">
+        <img src="{% static 'images/hotl.png' %}" alt="" srcset="">
+        <figcaption><h3>hotel</h3></figcaption>
+        <a href="{% url 'customer:nsign' %}"></a>
+      </figure>
+    </div>
+    <div class="row">
+
+      
+      <figure class="container col-lg-4 col-4">
+        <img src="{% static 'images/guides.png' %}" alt="" srcset="">
+        <figcaption><h3>guide</h3></figcaption>
+        <a href=""></a>
+      </figure>
+      <figure class="container col-lg-4 col-4">
+        <img src="{% static 'images/cab.png' %}" alt="" srcset="">
+        <figcaption><h3>cab driver</h3></figcaption>
+        <a href="{% url 'customer:nsign' %}"></a>
+      </figure>
+      <figure class="container col-lg-4 col-4">
+        <img src="{% static 'images/photo.png' %}" alt="" srcset="">
+        <figcaption><h3>photographer</h3></figcaption>
+        <a href=""></a>
+      </figure>
+    </div> 
+      
+      
+    
+  </div>
+
+  
+</body>
+</html>
+    

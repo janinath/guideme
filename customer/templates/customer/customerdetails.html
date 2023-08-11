@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guideME</title>
+
+    <link  rel="stylesheet" href="{% static 'css/stylelogin.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">    
+ 
+ 
+</head>
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 py-lg-5">
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'images/logo.png' %}" width="50" height="50" class="d-inline-block align-top" alt="">
+        
+      </a>
+      <a class="navbar-brand headding" href="#">
+        <b>guideME</b>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <!-- <div class="navbar-nav ml-auto">
+          
+            <li><a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a></li>
+            <li><a class="nav-link" href="#">About us</a></li>
+            <li><a class="nav-link" href="#">Contact</a></li>
+            <li class="nav-item dropdown" style="float: right"!importent>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+              Services provides
+              </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">restaurents</a>
+                  <a class="dropdown-item" href="#">hotels</a>
+                  <a class="dropdown-item" href="#">public transportation details</a>
+                  <a class="dropdown-item" href="#">people profiles</a>
+                  <a class="dropdown-item" href="#">guides</a>
+                  <a class="dropdown-item" href="#">photographers</a>
+                  <a class="dropdown-item" href="#">toilets</a>
+                </div>
+            </li>
+        
+        
+        </div> -->
+      </div>
+    </nav>
+
+
+
+
+
+ <table border="1">
+    <tr>
+        <th>first name</th>
+        <th>last name</th>
+        <th>mail</th>
+        <th>mobile</th>
+        <th>city</th>
+        <th>state</th>
+        <th>delete</th>
+        <th>update</th>
+    </tr>
+    {% for customer in cust %}
+        <tr>
+            <td>{{customer.fname}}</td>
+            <td>{{customer.lname}}</td>
+            <td>{{customer.email}}</td>
+            <td>{{customer.mob}}</td>
+            <td>{{customer.city}}</td>
+            <td>{{customer.state}}</td>
+            <td><a href="{% url 'customer:cust_update_n' customer.id %}">delete</a></td>
+          
+        </tr>
+    {% endfor %}
+</table> 
+
+    
+</body>
+</html>

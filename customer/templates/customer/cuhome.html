@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guideME</title>
+
+    <link  rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">    
+ <style>
+    .loginbutn{
+        width: 100px;
+        border: 0px solid;
+        position: relative;
+        padding: 15px 0;
+        text-align: center;
+        margin: 20px 10px;
+        font-weight: 50px;
+        font-size: 20px;
+        background:transparent;
+        color: #138d89;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border-radius: 100px;
+        transition: 1.5s;
+        
+
+    }
+    .loginbutn:hover {
+        box-shadow: 0 5px 8px 0 #138d89 inset,0 5px 8px 0 #138d89,
+                    0 5px 8px 0 #138d89 inset,0 5px 8px 0 #138d89;
+        
+    }
+    .body{
+      width: 1108px;
+      height: 230px;
+    }
+    .body p{
+      font-size: 20px;
+    }
+    .unwanted{
+    height: 200px;
+    background-color: white;
+}
+    
+ </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 py-lg-5">
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'images/logo.png' %}" width="50" height="50" class="d-inline-block align-top" alt="">
+        
+      </a>
+      <a class="navbar-brand headding" href="#">
+        <b style="font-size: 50px;">guideME</b>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          
+
+            <li><a class="nav-link active" href="{% url 'customer:login' %}"><button class="loginbutn">Login</button></a></li>
+            <li><a class="nav-link active" href="{% url 'customer:register1' %}"><button class="loginbutn" onclick="location.href='/sign'">Register</button></a></li>
+            
+            
+            
+            
+              
+        </div>
+      </div>
+    </nav>
+    <div class="h-100 d-flex align-items-center justify-content-center">
+     <div class="container">
+          <div class="row">
+              <div class="col-lg-4 col-xs-6">
+                  <div class="thumbnail" style="padding-bottom: 5px;">
+                      <img src="{% static 'images/kumarakam.jpg' %}">
+                  </div>
+              </div>
+              <div class="col-lg-4 col-xs-6">
+                  <div class="thumbnail" style="padding-bottom: 5px;">
+                      <img src="{% static 'images/athirapilli.jpg' %}">
+                  </div>
+              </div>
+              <div class="col-lg-4 col-xs-6">
+                  <div class="thumbnail" style="padding-bottom: 5px;">
+                      <img src="{% static 'images/varkala.jpg' %}">
+                  </div>
+              </div>
+              <div class="col-lg-4 col-xs-6">
+                  <div class="thumbnail" style="padding-bottom: 5px;">
+                      <img src="{% static 'images/bekal fort.jpg' %}">
+                  </div>
+              </div>
+              <div class="col-lg-4 col-xs-6">
+                  <div class="thumbnail" style="padding-bottom: 5px;">
+                      <img src="{% static 'images/vagamon.jpg' %}">
+                  </div>
+              </div>
+              <div class="col-lg-4 col-xs-6">
+                  <div class="thumbnail "style="padding-bottom: 5px;">
+                      <img src="{% static 'images/thrissur.jpg' %}">
+                  </div>
+              </div>
+              <div class="col-lg-4 col-xs-6">
+                  <div class="thumbnail"  style="padding-bottom: 5px;">
+                      <img src="{% static 'images/kochi.jpg' %}">
+                  </div>
+              </div>
+              <div class="col-lg-4 col-xs-6">
+                  <div class="thumbnail"  style="padding-bottom: 5px;">
+                      <img src="{% static 'images/munnar.jpg' %}">
+                  </div>
+              </div>
+              <div class="col-lg-4 col-xs-6">
+                  <div class="thumbnail"  style="padding-bottom: 5px;">
+                      <img src="{% static 'images/thekkady.jpg' %}">
+                  </div>
+              </div>
+                  
+              
+          </div>
+          
+      </div> 
+    </div> 
+    <div class="container">
+    
+      <div class="head">
+          <h3 id="aboutus">About Us</h3>
+      </div>
+      <div class="body">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt illo iusto, recusandae laboriosam necessitatibus nesciunt officiis laudantium, sunt tenetur, facilis hic! Veniam libero fugit recusandae nulla cum est excepturi repellendus esse obcaecati! Similique sint blanditiis nam ex cupiditate animi praesentium. Voluptatem explicabo reiciendis dicta ex numquam recusandae consectetur saepe, ut tempora, voluptate odio totam quam dolorem. Sint, aliquam. Officia, eos!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, dolore labore suscipit sequi doloremque reprehenderit illum dicta veniam harum quo tempora. Eligendi deleniti porro aspernatur beatae officiis neque sed ab voluptas doloremque error iusto dolorum illum quaerat, iste mollitia repellendus? Voluptas consequuntur minus enim quia neque, ea minima porro itaque?</p>
+      </div>
+     
+    </div>  
+    <div class="h-100 d-flex align-items-center justify-content-center">
+
+      <div class="container contact" style="align-items: center;">
+          <div class="head">
+              <h3 id="contact">Contact Us</h3>
+          </div>
+      
+          <form method="post">
+              {% csrf_token %}
+              <div class="form-group ">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="c_email">
+              <label id="contact_email"></label>
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                  <label for="formGroupExampleInput">message</label>
+                  <label for="" id="contact_message"></label>
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Any query ? please be free to ask" name="c_message">
+              </div>
+              <button type="submit" class="btn btn-primary">Send</button>
+              <p style="color: blue;">{{msg}}</p>
+          </form>    
+      </div>
+      
+      
+    </div>  
+    <div class="unwanted"></div>
+
+
+
+
+
+<script src="{% static 'javascript/gallery.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> 
+
+</body>
+</html>
+    
